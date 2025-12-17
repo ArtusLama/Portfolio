@@ -35,4 +35,12 @@ export default defineNuxtConfig({
             tailwindcss(),
         ],
     },
+
+    site: {
+        // DEV VALUES -> Override site defaults using environment variables - see template.env
+        url: "http://localhost:3000",
+        name: "Arthur Paucke",
+        env: "development",
+    },
+
 })
