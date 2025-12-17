@@ -1,5 +1,5 @@
 {
-  "name": "Portfolio",
+  "name": "portfolio",
   "type": "module",
   "private": true,
   "scripts": {
@@ -7,7 +7,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepare": "husky"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.12.1",
@@ -31,6 +34,11 @@
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.1.18",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "tailwindcss": "^4.1.18"
+  },
+  "lint-staged": {
+    "*": "npm run lint"
   }
 }
