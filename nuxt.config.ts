@@ -1,3 +1,5 @@
+import tailwindcss from "@tailwindcss/vite"
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: "2025-07-15",
@@ -17,11 +19,20 @@ export default defineNuxtConfig({
         "shadcn-nuxt",
         "lenis/nuxt",
         "vue-sonner/nuxt",
+        "@nuxtjs/stylelint-module",
     ],
 
     eslint: {
         config: {
             stylistic: true,
         },
+    },
+
+    // Tailwind CSS Configuration -> use @nuxtjs/tailwindcss if v7 is released
+    css: ["~/assets/css/main.css"],
+    vite: {
+        plugins: [
+            tailwindcss(),
+        ],
     },
 })
