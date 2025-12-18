@@ -19,7 +19,7 @@ watch(isOpen, (newVal) => {
 </script>
 
 <template>
-    <nav class="fixed top-0 left-0 right-0 z-40 p-2">
+    <header class="fixed top-0 left-0 right-0 z-40 p-2">
         <div
             class="border bg-card shadow rounded-lg p-4 pl-8 transition-[height] duration-300 ease-in-out overflow-hidden"
             :class="isOpen ? 'h-[calc(100dvh-1rem)]' : 'h-20'"
@@ -37,10 +37,10 @@ watch(isOpen, (newVal) => {
                     <NavigationMobileMenuButton v-model="isOpen" />
                 </div>
             </div>
-            <div class="mt-18 flex flex-col gap-y-2 items-start">
+            <nav class="mt-18 flex flex-col gap-y-2 items-start">
                 <p>a link</p>
                 <p>another link</p>
-            </div>
+            </nav>
         </div>
-    </nav>
+    </header>
 </template>

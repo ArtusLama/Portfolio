@@ -1,5 +1,6 @@
 @theme inline {
     --color-footer: var(--footer);
+    --ease-spring: cubic-bezier(0.22, 1, 0.36, 1.2);
 }
 
 :root {
