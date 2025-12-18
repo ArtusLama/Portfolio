@@ -1,18 +1,9 @@
 <template>
     <footer
         class="px-16 py-10 bg-footer flex flex-col
-                gap-4
-                lg:gap-2"
+                gap-16
+                lg:gap-12"
     >
-        <div>
-            <p
-                class="font-black text-3xl stroke-1
-                        text-center
-                        lg:text-left"
-            >
-                Arthur Paucke
-            </p>
-        </div>
         <div
             class="flex justify-between
                     flex-col         items-center        gap-12
@@ -23,6 +14,13 @@
                         items-center
                         lg:items-start"
             >
+                <p
+                    class="font-black text-3xl stroke-1
+                        text-center
+                        lg:text-left"
+                >
+                    Arthur Paucke
+                </p>
                 <p
                     class="text-center max-w-72
                             lg:text-left lg:max-w-80"
@@ -52,7 +50,7 @@
                     />
                 </div>
             </div>
-            <div class="flex gap-8">
+            <div class="flex gap-8 flex-wrap justify-center">
                 <FooterLinksCategory title="Main">
                     <FooterLinksItem
                         v-for="i in 4"
@@ -73,7 +71,7 @@
             </div>
         </div>
         <div
-            class="flex flex-col mt-8
+            class="flex flex-col
                     items-center    gap-1    text-center
                     lg:items-start  lg:gap-0 lg:text-left"
         >
