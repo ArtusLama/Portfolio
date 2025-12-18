@@ -39,8 +39,15 @@ export default defineNuxtConfig({
     site: {
         // DEV VALUES -> Override site defaults using environment variables - see template.env
         url: "http://localhost:3000",
-        name: "Arthur Paucke",
+        name: "Arthur Paucke Portfolio",
         env: "development",
+    },
+
+    runtimeConfig: {
+        public: {
+            // Can be overridden in environment variables using NUXT_PUBLIC_BUILD_DATE
+            buildDate: new Date().toISOString(),
+        },
     },
 
 })

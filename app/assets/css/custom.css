@@ -1,0 +1,11 @@
+@theme inline {
+    --color-footer: var(--footer);
+}
+
+:root {
+    --footer: oklch(0.141 0.005 285.823);
+}
+
+.dark {
+    --footer: oklch(17.853% 0.0041 285.914);
+}

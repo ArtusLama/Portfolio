@@ -1,5 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@artusdev/tailwind-underlines";
+@import "./custom.css";
 
 @custom-variant dark (&:is(.dark *));
 
