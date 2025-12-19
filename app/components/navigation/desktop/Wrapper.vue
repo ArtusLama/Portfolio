@@ -5,28 +5,30 @@ const connected = computed(() => y.value < 100)
 </script>
 
 <template>
-    <div class="nav-wrapper fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-xl z-50">
+    <header class="nav-wrapper fixed top-0 left-1/2 -translate-x-1/2 z-50 flex justify-center">
         <div
-            class="navbar bg-accent"
+            class="navbar"
             :class="connected ? 'connected' : 'detached'"
         >
-            <div class="nav-inner py-4 px-12">
-                <p>test content | {{ y }}</p>
+            <div class="nav-inner p-3">
+                <slot />
             </div>
         </div>
-    </div>
+    </header>
 </template>
 
 <style>
 :root {
     /* Navbar color variables */
-    --nav-background: var(--color-accent);
-    --nav-border-color: var(--color-border);
+    --nav-background: var(--color-navbar-background);
+    --nav-border-color: var(--color-navbar-border);
     --nav-border-width: 1px;
 
     /* Navbar size variables */
-    --nav-height: 3.5rem;
-    --nav-connected-height: 4rem;
+    --nav-height: 4rem;
+    --nav-width: 48rem;
+    --nav-connected-height: 4.5rem;
+    --nav-connected-width: 55rem;
     --nav-radius: 16px;
     --nav-detached-distance: 1rem;
 
@@ -35,9 +37,8 @@ const connected = computed(() => y.value < 100)
     --nav-corner-radius: var(--nav-corner-height);
 
     /* Animation timing variables */
-    --nav-animation-duration: 0.6s;
-    --nav-corner-animation-duration: 0.3s;
-    --nav-animation-corner-delay-percentage: 70;
+    --nav-animation-duration: 0.5s;
+    --nav-corner-animation-duration: 0.2s;
     --nav-animation-bounce: cubic-bezier(0.34, 1.8, 0.64, 1);
 
     /* Calculated durations */
@@ -45,10 +46,13 @@ const connected = computed(() => y.value < 100)
 }
 
 .navbar {
+    width: var(--nav-width);
+    background: var(--nav-background);
     border: var(--nav-border-width) solid var(--nav-border-color);
     border-bottom-left-radius: var(--nav-radius);
     border-bottom-right-radius: var(--nav-radius);
     transition:
+        width var(--nav-animation-duration) var(--nav-animation-bounce),
         border-top-left-radius var(--nav-radius-duration) ease-out var(--nav-corner-animation-duration),
         border-top-right-radius var(--nav-radius-duration) ease-out var(--nav-corner-animation-duration),
         margin var(--nav-animation-duration) var(--nav-animation-bounce),
@@ -60,8 +64,10 @@ const connected = computed(() => y.value < 100)
 }
 
 .navbar.connected {
+    width: var(--nav-connected-width);
     border-top: var(--nav-border-width) solid transparent;
     transition:
+        width var(--nav-animation-duration) var(--nav-animation-bounce),
         border-top-left-radius var(--nav-radius-duration) ease-in 0s,
         border-top-right-radius var(--nav-radius-duration) ease-in 0s,
         margin var(--nav-animation-duration) var(--nav-animation-bounce),
@@ -129,7 +135,7 @@ const connected = computed(() => y.value < 100)
     border-radius: 50%;
     border: var(--nav-border-width) solid var(--nav-corner-border-color);
     background: var(--color-background);
-    z-index: 2;
+    z-index: 4;
     overflow: hidden;
     background-clip: padding-box;
     transition: all var(--nav-corner-animation-duration) ease-in 0s;
@@ -138,7 +144,7 @@ const connected = computed(() => y.value < 100)
 .navbar .nav-inner::before {
     left: calc(-2 * var(--nav-corner-width));
     clip-path: polygon(
-        50% 50%,
+        70% 25%,
         50% 0%,
         100% 0%,
         100% 50%
@@ -148,7 +154,7 @@ const connected = computed(() => y.value < 100)
 .navbar .nav-inner::after {
     right: calc(-2 * var(--nav-corner-width));
     clip-path: polygon(
-        50% 50%,
+        30% 25%,
         50% 0%,
         0% 0%,
         0% 50%

@@ -1,4 +1,6 @@
 @theme inline {
+    --color-navbar-background: var(--navbar-background);
+    --color-navbar-border: var(--navbar-border);
     --color-footer: var(--footer);
     --ease-spring: cubic-bezier(0.22, 1, 0.36, 1.2);
     --font-sans: "Geist", sans-serif;
@@ -6,9 +8,13 @@
 }
 
 :root {
+    --navbar-background: oklch(0.95 0.01 285.823);
+    --navbar-border: oklch(0.8 0.01 285.823);
     --footer: oklch(0.141 0.005 285.823);
 }
 
 .dark {
+    --navbar-background: oklch(20.392% 0.0076 285.593);
+    --navbar-border: oklch(33.604% 0.0139 285.593);
     --footer: oklch(17.853% 0.0041 285.914);
 }

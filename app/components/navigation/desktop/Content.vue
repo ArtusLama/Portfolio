@@ -1,0 +1,40 @@
+<template>
+    <nav class="flex items-center justify-evenly origin-center w-full">
+        <NavigationDesktopLink
+            to="/"
+            icon="lucide:house"
+        >
+            Home
+        </NavigationDesktopLink>
+        <NavigationDesktopLink
+            to="/"
+            icon="lucide:user"
+        >
+            About
+        </NavigationDesktopLink>
+        <NavigationDesktopLink
+            to="/"
+            icon="lucide:graduation-cap"
+        >
+            Experience
+        </NavigationDesktopLink>
+        <NavigationDesktopLink
+            to="/"
+            icon="lucide:sparkles"
+        >
+            Skills
+        </NavigationDesktopLink>
+        <NavigationDesktopLink
+            to="/"
+            icon="lucide:layout-grid"
+        >
+            Projects
+        </NavigationDesktopLink>
+        <NavigationDesktopLink
+            to="/"
+            icon="lucide:phone"
+        >
+            Contact
+        </NavigationDesktopLink>
+    </nav>
+</template>
