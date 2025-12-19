@@ -31,26 +31,49 @@ const connected = computed(() => y.value < 100)
     --nav-detached-distance: 1rem;
 
     /* Corner cutout variables */
-    --nav-corner-width: 30px;
     --nav-corner-height: 30px;
     --nav-corner-radius: var(--nav-corner-height);
+
+    /* Animation timing variables */
+    --nav-animation-duration: 0.6s;
+    --nav-corner-animation-duration: 0.3s;
+    --nav-animation-corner-delay-percentage: 70;
+    --nav-animation-bounce: cubic-bezier(0.34, 1.8, 0.64, 1);
+
+    /* Calculated durations */
+    --nav-radius-duration: calc(var(--nav-animation-duration) - var(--nav-corner-animation-duration));
 }
 
 .navbar {
     border: var(--nav-border-width) solid var(--nav-border-color);
     border-bottom-left-radius: var(--nav-radius);
     border-bottom-right-radius: var(--nav-radius);
-    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition:
+        border-top-left-radius var(--nav-radius-duration) ease-out var(--nav-corner-animation-duration),
+        border-top-right-radius var(--nav-radius-duration) ease-out var(--nav-corner-animation-duration),
+        margin var(--nav-animation-duration) var(--nav-animation-bounce),
+        border-color var(--nav-animation-duration) var(--nav-animation-bounce);
     position: relative;
+
+    --nav-corner-width: 30px;
+    --nav-corner-border-color: var(--nav-border-color);
 }
 
 .navbar.connected {
     border-top: var(--nav-border-width) solid transparent;
+    transition:
+        border-top-left-radius var(--nav-radius-duration) ease-in 0s,
+        border-top-right-radius var(--nav-radius-duration) ease-in 0s,
+        margin var(--nav-animation-duration) var(--nav-animation-bounce),
+        border-color var(--nav-animation-duration) var(--nav-animation-bounce);
 }
 
 .navbar.detached {
     margin-top: calc(var(--nav-detached-distance) + 1rem);
     border-radius: var(--nav-radius);
+
+    --nav-corner-width: 0px;
+    --nav-corner-border-color: transparent;
 }
 
 .nav-inner {
@@ -59,53 +82,61 @@ const connected = computed(() => y.value < 100)
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: all var(--nav-animation-duration) var(--nav-animation-bounce);
 }
 
 .navbar.connected .nav-inner {
     height: var(--nav-connected-height);
+    transition: all var(--nav-animation-duration) var(--nav-animation-bounce);
 }
 
 /* Squares - on navbar */
-.navbar.connected::before,
-.navbar.connected::after {
+.navbar::before,
+.navbar::after {
     content: "";
     position: absolute;
     top: calc(-1 * var(--nav-border-width));
-    width: var(--nav-corner-size);
-    height: var(--nav-corner-size);
+    width: var(--nav-corner-width);
+    height: var(--nav-corner-height);
     background: var(--nav-background);
     z-index: 1;
+    transition: all var(--nav-corner-animation-duration) ease-in 0s;
 }
 
-.navbar.connected::before {
-    left: calc(-1 * var(--nav-corner-size));
+.navbar::before {
+    left: calc(-1 * var(--nav-corner-width));
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
 }
 
-.navbar.connected::after {
-    right: calc(-1 * var(--nav-corner-size));
+.navbar::after {
+    right: calc(-1 * var(--nav-corner-width));
     clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
 }
 
+.navbar.connected::before,
+.navbar.connected::after {
+    transition: all var(--nav-corner-animation-duration) ease-out var(--nav-radius-duration);
+}
+
 /* Circles - on inner element to create curve cutout */
-.navbar.connected .nav-inner::before,
-.navbar.connected .nav-inner::after {
+.navbar .nav-inner::before,
+.navbar .nav-inner::after {
     content: "";
     position: absolute;
     top: calc(-1 * var(--nav-border-width));
-    width: calc(2 * var(--nav-corner-size));
-    height: calc(2 * var(--nav-corner-size));
+    width: calc(2 * var(--nav-corner-width));
+    height: calc(2 * var(--nav-corner-height));
     border-radius: 50%;
-    border: var(--nav-border-width) solid var(--nav-border-color);
+    border: var(--nav-border-width) solid var(--nav-corner-border-color);
     background: var(--color-background);
     z-index: 2;
     overflow: hidden;
     background-clip: padding-box;
+    transition: all var(--nav-corner-animation-duration) ease-in 0s;
 }
 
-.navbar.connected .nav-inner::before {
-    left: calc(-2 * var(--nav-corner-size));
+.navbar .nav-inner::before {
+    left: calc(-2 * var(--nav-corner-width));
     clip-path: polygon(
         50% 50%,
         50% 0%,
@@ -114,13 +145,18 @@ const connected = computed(() => y.value < 100)
     );
 }
 
-.navbar.connected .nav-inner::after {
-    right: calc(-2 * var(--nav-corner-size));
+.navbar .nav-inner::after {
+    right: calc(-2 * var(--nav-corner-width));
     clip-path: polygon(
         50% 50%,
         50% 0%,
         0% 0%,
         0% 50%
     );
+}
+
+.navbar.connected .nav-inner::before,
+.navbar.connected .nav-inner::after {
+    transition: all var(--nav-corner-animation-duration) ease-out var(--nav-radius-duration);
 }
 </style>
