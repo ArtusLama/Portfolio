@@ -1,6 +1,8 @@
 @theme inline {
     --color-footer: var(--footer);
     --ease-spring: cubic-bezier(0.22, 1, 0.36, 1.2);
+    --font-sans: "Geist", sans-serif;
+    --font-mono: "Geist Mono", monospace;
 }
 
 :root {

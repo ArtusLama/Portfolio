@@ -36,6 +36,13 @@ export default defineNuxtConfig({
         ],
     },
 
+    fonts: {
+        families: [
+            { name: "Geist", provider: "google" },
+            { name: "Geist Mono", provider: "google" },
+        ],
+    },
+
     site: {
         // DEV VALUES -> Override site defaults using environment variables - see template.env
         url: "http://localhost:3000",
