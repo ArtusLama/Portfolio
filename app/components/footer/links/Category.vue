@@ -6,9 +6,9 @@ defineProps<{
 
 <template>
     <div
-        class="flex flex-col
-                items-center        gap-2
-                lg:items-start lg:gap-4"
+        class="flex flex-col gap-2
+                items-center
+                lg:items-start"
     >
         <p class="text-sm text-muted-foreground/80 tracking-widest uppercase">
             {{ title }}

@@ -14,7 +14,7 @@
                 <span>
                     &
                 </span>
-                <span class="bg-linear-to-b from-blue-300 to-blue-700 bg-clip-text text-transparent">
+                <span class="bg-linear-to-b from-sky-300 to-blue-700 bg-clip-text text-transparent">
                     Developer
                 </span>
             </h2>
@@ -24,7 +24,7 @@
                     class="mr-1 -mb-0.5"
                 />Based in Hamburg, Germany
             </p>
-            <div class="flex gap-2 mt-4">
+            <div class="flex gap-2 mt-8">
                 <SocialIcon
                     icon="lucide:github"
                     link="https://github.com/ArtusLama"
