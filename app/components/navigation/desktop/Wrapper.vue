@@ -26,9 +26,9 @@ const connected = computed(() => y.value < 100)
 
     /* Navbar size variables */
     --nav-height: 4rem;
-    --nav-width: 48rem;
+    --nav-width: 42rem;
     --nav-connected-height: 4.5rem;
-    --nav-connected-width: 55rem;
+    --nav-connected-width: 47rem;
     --nav-radius: 16px;
     --nav-detached-distance: 1rem;
 

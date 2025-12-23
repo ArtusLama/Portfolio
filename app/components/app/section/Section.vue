@@ -12,7 +12,7 @@ withDefaults(defineProps<{
 <template>
     <section
         :id="id"
-        class="space-y-12 flex flex-col"
+        class="space-y-12 flex flex-col scroll-mt-32"
         :class="{
             'items-start': alignment === 'left',
             'items-center text-center': alignment === 'center',
@@ -27,6 +27,7 @@ withDefaults(defineProps<{
                 'text-center items-center': alignment === 'center',
                 'text-right items-end': alignment === 'right',
             }"
+            @click="useLenisScrollTo(id, false)"
         >
             <div class="flex items-center gap-3">
                 <div class="size-2 bg-foreground rounded-full animate-pulse" />

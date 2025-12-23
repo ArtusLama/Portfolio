@@ -15,7 +15,14 @@ watch(isOpen, (newVal) => {
     } else {
         document.body.removeAttribute("data-lenis-prevent")
     }
-})
+}, { immediate: true })
+
+function goToTop() {
+    if (route.path === "/") {
+        useLenis().value?.scrollTo(0)
+        isOpen.value = false
+    }
+}
 </script>
 
 <template>
@@ -30,6 +37,7 @@ watch(isOpen, (newVal) => {
                 <NuxtLink
                     to="/"
                     class="font-black text-2xl -mt-0.75"
+                    @click.prevent="goToTop"
                 >
                     Arthur Paucke
                 </NuxtLink>
