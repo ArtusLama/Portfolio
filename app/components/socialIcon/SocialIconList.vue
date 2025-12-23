@@ -1,3 +1,13 @@
+<script lang="ts" setup>
+import { toast } from "vue-sonner"
+
+const mailAddress = "contact@arthur-paucke.de"
+function copyMailToClipboard() {
+    navigator.clipboard.writeText(mailAddress)
+    toast.success(`Email address copied to clipboard: "${mailAddress}"`)
+}
+</script>
+
 <template>
     <div class="flex gap-2">
         <SocialIcon
@@ -21,6 +31,7 @@
             label="Mail"
             expand-text="contact@arthur-paucke.de"
             :expanded-width="240"
+            @on-mobile-click="copyMailToClipboard"
         />
     </div>
 </template>

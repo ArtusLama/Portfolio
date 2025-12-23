@@ -7,12 +7,23 @@ const props = defineProps<{
     expandedWidth: number
 }>()
 
+const emit = defineEmits<{
+    (e: "onMobileClick"): void
+}>()
+
 const buttonRef = ref<HTMLElement>()
 const isHovered = useElementHover(buttonRef)
+const isDesktop = useMediaQuery("(min-width: 768px)") // md breakpoint
 
 const buttonWidth = computed(() =>
-    isHovered.value ? `${props.expandedWidth}px` : "2.5rem", // 2.5rem = size-10 of icon-lg
+    isHovered.value && isDesktop.value ? `${props.expandedWidth}px` : "2.5rem", // 2.5rem = size-10 of icon-lg
 )
+
+function onClick() {
+    if (!isDesktop.value) {
+        emit("onMobileClick")
+    }
+}
 </script>
 
 <template>
@@ -30,6 +41,7 @@ const buttonWidth = computed(() =>
             external
             target="_blank"
             class="flex items-center justify-center"
+            @click="onClick"
         >
             <Icon
                 class="mt-1 group-hover:mt-0 group-hover:scale-105 transition-all ease-spring"
