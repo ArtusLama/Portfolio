@@ -8,7 +8,12 @@ useSeoMeta({
 <template>
     <div>
         <Navigation />
-        <AppHeroSection />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore placeat laborum doloribus veritatis unde nemo, in tenetur eligendi dolores ipsum ex veniam? Nostrum, dicta optio quasi unde magnam aut sed.</p>
+        <main class="space-y-24">
+            <AppHeroSection />
+            <AppSectionExperienceSection />
+            <AppSectionSkillsSection />
+            <AppSectionProjectsSection />
+            <AppSectionContactSection />
+        </main>
     </div>
 </template>

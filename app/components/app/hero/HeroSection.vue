@@ -18,7 +18,7 @@
                     Developer
                 </span>
             </h2>
-            <p class="text-xl mt-4 text-center">
+            <p class="sm:text-xl text-lg mt-4 text-center">
                 <Icon
                     name="lucide:map-pin"
                     class="mr-1 -mb-0.5"
