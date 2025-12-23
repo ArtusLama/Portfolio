@@ -18,10 +18,8 @@ watch(isOpen, (newVal) => {
 }, { immediate: true })
 
 function goToTop() {
-    if (route.path === "/") {
-        useLenis().value?.scrollTo(0)
-        isOpen.value = false
-    }
+    useLenis().value?.scrollTo(0)
+    isOpen.value = false
 }
 </script>
 

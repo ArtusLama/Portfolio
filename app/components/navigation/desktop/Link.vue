@@ -27,7 +27,6 @@ function onClick() {
     >
         <NuxtLink
             :to="target"
-            class="flex items-center gap-2"
             @click="onClick"
         >
             <Icon :name="icon" />
