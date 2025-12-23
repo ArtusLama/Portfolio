@@ -27,28 +27,7 @@
                 >
                     Whether it's a quick hello or something more, I'd be glad to hear from you.
                 </p>
-                <div class="flex gap-2">
-                    <SocialIcon
-                        icon="lucide:github"
-                        link="https://github.com/ArtusLama"
-                        label="GitHub"
-                    />
-                    <SocialIcon
-                        icon="lucide:linkedin"
-                        link="https://www.linkedin.com/in/arthur-paucke/"
-                        label="LinkedIn"
-                    />
-                    <SocialIcon
-                        icon="simple-icons:discord"
-                        link="https://discord.gg/TSE3ErSzaQ"
-                        label="Discord"
-                    />
-                    <SocialIcon
-                        icon="lucide:mail"
-                        link="mailto:contact@arthur-paucke.de"
-                        label="Mail"
-                    />
-                </div>
+                <SocialIconList />
             </div>
             <div class="flex gap-8 flex-wrap justify-center">
                 <FooterLinksCategory title="Main">

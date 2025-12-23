@@ -24,28 +24,7 @@
                     class="mr-1 -mb-0.5"
                 />Based in Hamburg, Germany
             </p>
-            <div class="flex gap-2 mt-8">
-                <SocialIcon
-                    icon="lucide:github"
-                    link="https://github.com/ArtusLama"
-                    label="GitHub"
-                />
-                <SocialIcon
-                    icon="lucide:linkedin"
-                    link="https://www.linkedin.com/in/arthur-paucke/"
-                    label="LinkedIn"
-                />
-                <SocialIcon
-                    icon="simple-icons:discord"
-                    link="https://discord.gg/TSE3ErSzaQ"
-                    label="Discord"
-                />
-                <SocialIcon
-                    icon="lucide:mail"
-                    link="mailto:contact@arthur-paucke.de"
-                    label="Mail"
-                />
-            </div>
+            <SocialIconList class="mt-8" />
         </div>
     </div>
 </template>
