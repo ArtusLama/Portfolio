@@ -32,7 +32,8 @@ function onClick() {
         ref="buttonRef"
         variant="ghost"
         size="icon-lg"
-        class="group overflow-hidden border border-transparent hover:border-border px-2 h-10 justify-start transition-all duration-500"
+        class="group overflow-hidden border border-transparent hover:border-border px-2 h-10 justify-start transition-all duration-500
+                outline-none focus-within:border-ring focus-within:ring-ring/50 focus-within:ring-[3px]"
         :style="{ width: buttonWidth }"
         as-child
     >
@@ -43,11 +44,12 @@ function onClick() {
                 :title="label"
                 external
                 target="_blank"
-                class="flex items-center justify-center"
+                class="flex items-center justify-center
+                        rounded outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]"
                 @click="onClick"
             >
                 <Icon
-                    class="mt-1 group-hover:mt-0 group-hover:scale-105 transition-all ease-spring"
+                    class="mt-1 group-hover:mt-0 group-hover:scale-105 group-focus-within:mt-0 group-focus-within:scale-105 transition-all ease-spring"
                     :name="icon"
                     :size="22"
                 />

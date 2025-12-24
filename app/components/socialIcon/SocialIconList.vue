@@ -2,10 +2,11 @@
 import { toast } from "vue-sonner"
 
 const mailAddress = "contact@arthur-paucke.de"
-function copyMailToClipboard() {
+
+const copyMailToClipboard = useThrottleFn(() => {
     navigator.clipboard.writeText(mailAddress)
     toast.success(`Email address copied to clipboard: "${mailAddress}"`)
-}
+}, 2000)
 </script>
 
 <template>
@@ -31,7 +32,7 @@ function copyMailToClipboard() {
             label="Mail"
             expand-text="contact@arthur-paucke.de"
             :expanded-width="240"
-            @on-mobile-click="copyMailToClipboard"
+            @click="copyMailToClipboard"
         />
     </div>
 </template>
