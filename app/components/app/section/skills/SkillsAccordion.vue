@@ -24,7 +24,6 @@ const categories: Record<categoryType, string> = {
         collapsible
         :default-value="Object.keys(categories)"
         type="multiple"
-        class="w-full text-left"
     >
         <UiAccordionItem
             v-for="(categoryKey, index) in Object.keys(categories)"
@@ -35,7 +34,7 @@ const categories: Record<categoryType, string> = {
                 {{ categories[categoryKey as categoryType] }}
             </UiAccordionTrigger>
             <UiAccordionContent>
-                <div class="flex flex-wrap gap-4">
+                <div class="flex flex-wrap gap-4 text-left">
                     <AppSectionSkillsTechItem
                         v-for="techItem in props.techStack.filter(tech => tech.category === categoryKey)"
                         :key="techItem.title"
