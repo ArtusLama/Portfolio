@@ -4,6 +4,6 @@
         label="Education & Experience"
         title="Academic and Practical Experience"
     >
-        <p>Lol test haha</p>
+        <AppSectionExperienceTimeline class="text-left" />
     </AppSection>
 </template>
