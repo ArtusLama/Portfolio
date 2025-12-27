@@ -12,6 +12,7 @@ withDefaults(defineProps<{
 <template>
     <div class="flex flex-col items-center">
         <section
+            :id="id"
             class="max-w-400 w-full flex flex-col gap-12 scroll-mt-32"
             :class="{
                 'items-start': alignment === 'left',
