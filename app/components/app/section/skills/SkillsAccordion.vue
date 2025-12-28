@@ -24,6 +24,7 @@ const categories: Record<categoryType, string> = {
         collapsible
         :default-value="Object.keys(categories)"
         type="multiple"
+        class="max-w-200"
     >
         <UiAccordionItem
             v-for="(categoryKey, index) in Object.keys(categories)"

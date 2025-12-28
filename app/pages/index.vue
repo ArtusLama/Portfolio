@@ -8,7 +8,7 @@ useSeoMeta({
 <template>
     <div>
         <Navigation />
-        <main class="space-y-24">
+        <main class="space-y-32">
             <AppHeroSection />
             <AppSectionExperienceSection />
             <AppSectionSkillsSection />

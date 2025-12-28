@@ -92,7 +92,7 @@ const techStack: Array<{
         title: "GitHub",
         description: "Code Hosting and Collaboration",
         logoPath: "/imgs/logos/tech/github.svg",
-        color: "#b5b1b126",
+        color: "#f0f0f026",
         link: "https://github.com/",
     },
 ]

@@ -9,11 +9,16 @@ defineProps<{
     remote?: boolean
     description: string
 }>()
+
+const isDesktop = useMediaQuery("(min-width: 768px)")
 </script>
 
 <template>
     <div class="flex gap-8">
-        <div class="text-right h-fit w-28 mt-4 shrink-0">
+        <div
+            v-if="isDesktop"
+            class="text-right h-fit w-28 mt-4 shrink-0"
+        >
             {{ dateFrom }} -<br>
             {{ dateTo }}
         </div>
@@ -22,49 +27,57 @@ defineProps<{
         >
             <div class="bg-white rounded-full size-3 absolute top-6 left-1/2 -translate-x-1/2" />
         </div>
-        <div class="border rounded-2xl bg-accent/25 px-8 py-4 mt-2 mb-8 max-w-200 w-full">
-            <div class="flex gap-4 items-center">
-                <NuxtImg
-                    :src="iconPath"
-                    alt="Icon"
-                    class="max-h-7 min-w-7"
-                />
-                <div>
-                    <h3 class="font-semibold text-lg leading-4">
-                        {{ title }}
-                    </h3>
-                    <div class="flex items-center gap-x-4 flex-wrap">
-                        <h4 class="text-muted-foreground">
-                            {{ subtitle }}
-                        </h4>
-                        <div
-                            v-if="location"
-                            class="text-sm text-muted-foreground/75"
-                        >
-                            <Icon
-                                name="lucide:map-pin"
-                                :size="14"
-                                class="mr-0.5 -mb-0.5"
-                            />
-                            {{ location }}
-                        </div>
-                        <div
-                            v-if="remote"
-                            class="text-sm text-muted-foreground/75"
-                        >
-                            <Icon
-                                name="lucide:map-pin-house"
-                                :size="14"
-                                class="mr-0.5 -mb-0.5"
-                            />
-                            Remote
+        <div class="max-w-200 w-full">
+            <div
+                v-if="!isDesktop"
+                class="pt-4"
+            >
+                {{ dateFrom }} - {{ dateTo }}
+            </div>
+            <div class="border rounded-2xl bg-accent/25 pl-6 pr-8 py-4 mt-2 mb-8">
+                <div class="flex gap-4 items-center">
+                    <NuxtImg
+                        :src="iconPath"
+                        alt="Icon"
+                        class="max-h-7 min-w-7"
+                    />
+                    <div>
+                        <h3 class="font-semibold text-lg leading-4">
+                            {{ title }}
+                        </h3>
+                        <div class="flex items-center gap-x-4 flex-wrap">
+                            <h4 class="text-muted-foreground">
+                                {{ subtitle }}
+                            </h4>
+                            <div
+                                v-if="location"
+                                class="text-sm text-muted-foreground/75"
+                            >
+                                <Icon
+                                    name="lucide:map-pin"
+                                    :size="14"
+                                    class="mr-0.5 -mb-0.5"
+                                />
+                                {{ location }}
+                            </div>
+                            <div
+                                v-if="remote"
+                                class="text-sm text-muted-foreground/75"
+                            >
+                                <Icon
+                                    name="lucide:map-pin-house"
+                                    :size="14"
+                                    class="mr-0.5 -mb-0.5"
+                                />
+                                Remote
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="text-muted-foreground mt-2">
-                {{ description }}
+                <div class="text-muted-foreground mt-2">
+                    {{ description }}
+                </div>
             </div>
         </div>
     </div>
