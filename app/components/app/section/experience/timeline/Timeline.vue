@@ -1,5 +1,39 @@
+<script setup lang="ts">
+const progressBar = useTemplateRef<HTMLElement>("progressBar")
+const timelineContainer = useTemplateRef<HTMLElement>("timelineContainer")
+
+onMounted(() => {
+    const gsap = useGSAP()
+    if (!progressBar.value || !timelineContainer.value) return
+
+    gsap.to(progressBar.value, {
+        height: "100%",
+        ease: "none",
+        scrollTrigger: {
+            trigger: timelineContainer.value,
+            start: "top center",
+            end: "bottom center",
+            scrub: 1,
+        },
+    })
+
+    // Dot Animation is in the TimelineItem Component
+})
+</script>
+
 <template>
-    <div>
+    <div
+        ref="timelineContainer"
+        class="relative"
+    >
+        <div class="absolute left-0 md:left-36 w-1 top-0 bottom-0 pointer-events-none">
+            <div class="bg-muted absolute w-full top-0 h-full" />
+            <div
+                ref="progressBar"
+                class="bg-white absolute w-full top-0 h-0"
+            />
+        </div>
+
         <AppSectionExperienceTimelineItem
             date-from="Jun 2013"
             date-to="Present (est. Jul 2026)"

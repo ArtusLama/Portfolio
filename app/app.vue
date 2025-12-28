@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ScrollTrigger from "gsap/ScrollTrigger"
+
 useSeoMeta({
     titleTemplate: title => title ? `${title} | Arthur Paucke` : "Arthur Paucke",
 })
@@ -15,13 +17,39 @@ useSchemaOrg([
         ],
     }),
 ])
+
+const lenisRef = useTemplateRef("lenis")
+
+watchEffect((onInvalidate) => {
+    if (!lenisRef.value?.lenis) return
+    const lenis = lenisRef.value.lenis
+
+    lenis.on("scroll", ScrollTrigger.update)
+
+    function update(time: number) {
+        lenis.raf(time * 1000)
+    }
+    useGSAP().ticker.add(update)
+
+    useGSAP().ticker.lagSmoothing(0)
+
+    onInvalidate(() => {
+        lenis.off("scroll", ScrollTrigger.update)
+        useGSAP().ticker.remove(update)
+    })
+})
 </script>
 
 <template>
     <div>
         <VueLenis
+            ref="lenis"
             root
-            :options="{ duration: 0.75, autoToggle: true }"
+            :options="{
+                duration: 0.75,
+                autoToggle: true,
+                autoRaf: false,
+            }"
         />
 
         <NuxtRouteAnnouncer />

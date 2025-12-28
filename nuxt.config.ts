@@ -20,6 +20,7 @@ export default defineNuxtConfig({
         "lenis/nuxt",
         "vue-sonner/nuxt",
         "@nuxtjs/stylelint-module",
+        "v-gsap-nuxt",
     ],
 
     eslint: {

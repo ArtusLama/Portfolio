@@ -11,6 +11,25 @@ defineProps<{
 }>()
 
 const isDesktop = useMediaQuery("(min-width: 768px)")
+
+const timelineDot = useTemplateRef<HTMLElement>("timelineDotFiller")
+onMounted(() => {
+    const gsap = useGSAP()
+    if (!timelineDot.value) return
+
+    gsap.to(timelineDot.value, {
+        width: "100%",
+        height: "100%",
+        ease: "none",
+        scrollTrigger: {
+            trigger: timelineDot.value,
+            start: "top center",
+            end: "bottom center",
+            scrub: 1,
+        },
+    },
+    )
+})
 </script>
 
 <template>
@@ -22,10 +41,14 @@ const isDesktop = useMediaQuery("(min-width: 768px)")
             {{ dateFrom }} -<br>
             {{ dateTo }}
         </div>
-        <div
-            class="min-h-full w-1 bg-white relative shrink-0"
-        >
-            <div class="bg-white rounded-full size-3 absolute top-6 left-1/2 -translate-x-1/2" />
+        <div class="min-h-full w-1 relative shrink-0">
+            <div class="rounded-full overflow-hidden bg-muted size-4 absolute top-6 left-1/2 -translate-x-1/2 flex items-center justify-center">
+                <div
+                    ref="timelineDotFiller"
+                    class="absolute bg-white rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-0"
+                />
+                <div class="bg-background rounded-full size-2 z-10" />
+            </div>
         </div>
         <div class="max-w-200 w-full">
             <div
