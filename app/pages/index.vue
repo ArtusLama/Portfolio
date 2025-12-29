@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineOgImageComponent("default")
 useSeoMeta({
-    description: "Welcome to my portfolio website!",
+    description: "Hey, I'm Arthur, a designer and developer based in Hamburg, Germany. Explore my portfolio to see my projects, experience, and the tools I use. I mainly work with Java and modern web technologies like Nuxt.js. Feel free to get in touch if anything catches your eye!",
 })
 </script>
 
