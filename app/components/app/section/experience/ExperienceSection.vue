@@ -5,15 +5,15 @@
         title="Academic and Practical Experience"
     >
         <div class="text-muted-foreground space-y-2 max-w-md">
-            <p>You can download my resume here for additional details about my background and experience:</p>
+            <p>You can download my CV here for additional details about my background and experience:</p>
             <UiButton as-child>
                 <NuxtLink
-                    to="/files/Resume_ArthurPaucke.pdf"
+                    to="/files/CV_ArthurPaucke.pdf"
                     target="_blank"
                     external
                 >
                     <Icon name="lucide:download" />
-                    Download Resume
+                    Download CV
                 </NuxtLink>
             </UiButton>
         </div>

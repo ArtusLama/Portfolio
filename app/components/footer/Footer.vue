@@ -1,3 +1,11 @@
+<script setup lang="ts">
+function goToTop() {
+    if (useRoute().path === "/") {
+        useLenis().value?.scrollTo(0)
+    }
+}
+</script>
+
 <template>
     <footer
         class="px-16 py-10 bg-footer flex flex-col
@@ -30,27 +38,44 @@
                 <SocialIconList />
             </div>
             <div class="flex gap-8 flex-wrap justify-center">
-                <FooterLinksCategory title="Main">
+                <FooterLinksCategory title="Navigation">
                     <FooterLinksItem
-                        v-for="i in 4"
-                        :key="i"
-                        label="test lol"
-                        link="https://example.com"
-                        is-external
+                        label="Home"
+                        link="/"
+                        @click="goToTop"
+                    />
+                    <FooterLinksItem
+                        label="Experience"
+                        link="#experience"
+                        @click="useLenisScrollTo('experience', false)"
+                    />
+                    <FooterLinksItem
+                        label="Skills"
+                        link="#skills"
+                        @click="useLenisScrollTo('skills', false)"
+                    />
+                    <FooterLinksItem
+                        label="Projects"
+                        link="#projects"
+                        @click="useLenisScrollTo('projects', false)"
+                    />
+                    <FooterLinksItem
+                        label="Contact"
+                        link="#contact"
+                        @click="useLenisScrollTo('contact', false)"
                     />
                 </FooterLinksCategory>
-                <FooterLinksCategory title="Other">
+                <FooterLinksCategory title="Resources">
                     <FooterLinksItem
-                        v-for="i in 4"
-                        :key="i"
-                        label="on this page"
-                        link="/test"
+                        label="View CV"
+                        link="/files/CV_ArthurPaucke.pdf"
+                        is-external
                     />
                 </FooterLinksCategory>
             </div>
         </div>
         <div
-            class="flex flex-col
+            class="flex flex-col text-sm
                     items-center    gap-1    text-center
                     lg:items-start  lg:gap-0 lg:text-left"
         >

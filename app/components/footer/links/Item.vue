@@ -11,7 +11,7 @@ defineProps<{
         :to="link"
         :target="isExternal ? '_blank' : '_self'"
         :external="isExternal"
-        class="flex items-center gap-2 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] rounded
+        class="w-fit flex items-center gap-2 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] rounded
                 underline-base hover:underline-expanded underline-thickness-thin underline-in-left underline-out-right"
     >
         {{ label }}

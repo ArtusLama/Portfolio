@@ -4,6 +4,6 @@
         label="Showcase"
         title="Projects and Work Samples"
     >
-        <p>Lol test haha</p>
+        <p>🚧 Section under construction 🚧</p>
     </AppSection>
 </template>

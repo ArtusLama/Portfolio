@@ -14,7 +14,9 @@ defineProps<{
             {{ title }}
         </p>
         <div
-            class="flex flex-col gap-1"
+            class="flex flex-col gap-1
+                    items-center
+                    lg:items-start"
         >
             <slot />
         </div>
