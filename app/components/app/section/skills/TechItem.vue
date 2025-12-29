@@ -17,7 +17,7 @@ defineProps<{
     >
 
         <div
-            class="rounded-lg aspect-square flex items-center justify-center"
+            class="rounded-lg size-16 shrink-0 flex items-center justify-center"
             :style="`background-color: ${color}`"
         >
             <slot />
