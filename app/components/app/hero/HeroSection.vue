@@ -18,10 +18,6 @@ onMounted(() => {
         type: "chars,words",
     })
 
-    const splitRoleText = SplitText.create(`#${roleTextId}`, {
-        type: "words,chars",
-    })
-
     const splitLocationText = SplitText.create(`#${locationTextId}`, {
         type: "words,chars",
     })
@@ -51,11 +47,12 @@ onMounted(() => {
             stagger: 0.1,
             ease: "power2.out",
         }, "-=0.3")
-        .from(splitRoleText.chars, {
+        .from(`#${roleTextId} > span`, {
             opacity: 0,
             y: -20,
-            scale: 2,
-            stagger: 0.05,
+            scale: 1.4,
+            stagger: 0.1,
+            duration: 1,
             ease: "power2.out",
         }, "-=0.5")
         .from(splitLocationText.chars, {
@@ -63,7 +60,7 @@ onMounted(() => {
             y: 20,
             stagger: 0.03,
             ease: "power2.out",
-        }, "-=0.3")
+        }, "-=0.5")
         .from(`#${locationIconId}`, {
             opacity: 0,
             scale: 0,
@@ -90,15 +87,19 @@ onMounted(() => {
             </h1>
             <h2
                 :id="roleTextId"
-                class="font-bold text-5xl mt-2 text-center"
+                class="font-bold text-5xl text-center *:inline-block space-x-2 leading-14"
             >
-                <span class="bg-linear-to-b from-fuchsia-300 to-fuchsia-700 bg-clip-text text-transparent">
+                <span
+                    class="bg-linear-to-b from-fuchsia-300 to-fuchsia-700 bg-clip-text text-transparent"
+                    :style="{ WebkitTextFillColor: 'transparent' }"
+                >
                     Designer
                 </span>
-                <span>
-                    &
-                </span>
-                <span class="bg-linear-to-b from-sky-300 to-blue-700 bg-clip-text text-transparent">
+                <span>&</span>
+                <span
+                    class="bg-linear-to-b from-sky-300 to-blue-700 bg-clip-text text-transparent"
+                    :style="{ WebkitTextFillColor: 'transparent' }"
+                >
                     Developer
                 </span>
             </h2>
