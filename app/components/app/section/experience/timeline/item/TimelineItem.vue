@@ -57,7 +57,7 @@ onMounted(() => {
             >
                 {{ dateFrom }} - {{ dateTo }}
             </div>
-            <div class="border rounded-2xl bg-accent/25 pl-6 pr-8 py-4 mt-2 mb-8">
+            <div class="border rounded-2xl bg-accent/25 px-6 pt-6 pb-4 mt-2 mb-8">
                 <div class="flex gap-4 items-center">
                     <NuxtImg
                         :src="iconPath"

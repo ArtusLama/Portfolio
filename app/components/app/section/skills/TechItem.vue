@@ -9,7 +9,6 @@ defineProps<{
 
 <template>
     <NuxtLink
-        ref="element"
         :to="link"
         external
         target="_blank"
