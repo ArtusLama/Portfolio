@@ -46,22 +46,22 @@ function goToTop() {
                     />
                     <FooterLinksItem
                         label="Experience"
-                        link="#experience"
+                        link="/#experience"
                         @click="useLenisScrollTo('experience', false)"
                     />
                     <FooterLinksItem
                         label="Skills"
-                        link="#skills"
+                        link="/#skills"
                         @click="useLenisScrollTo('skills', false)"
                     />
                     <FooterLinksItem
                         label="Projects"
-                        link="#projects"
+                        link="/#projects"
                         @click="useLenisScrollTo('projects', false)"
                     />
                     <FooterLinksItem
                         label="Contact"
-                        link="#contact"
+                        link="/#contact"
                         @click="useLenisScrollTo('contact', false)"
                     />
                 </FooterLinksCategory>
@@ -70,6 +70,10 @@ function goToTop() {
                         label="View CV"
                         link="/files/CV_ArthurPaucke.pdf"
                         is-external
+                    />
+                    <FooterLinksItem
+                        label="MC Java Repos"
+                        link="/mc-java-repos"
                     />
                 </FooterLinksCategory>
             </div>

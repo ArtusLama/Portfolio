@@ -44,7 +44,9 @@
     "vue-sonner": "^2.0.9"
   },
   "devDependencies": {
+    "@iconify-json/logos": "^1.2.10",
     "@iconify-json/lucide": "^1.2.82",
+    "@iconify-json/simple-icons": "^1.2.64",
     "@stylistic/stylelint-plugin": "^4.0.0",
     "@tailwindcss/vite": "^4.1.18",
     "husky": "^9.1.7",
