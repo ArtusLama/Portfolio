@@ -24,6 +24,8 @@ onMounted(() => {
         title="Projects and Work Samples"
     >
         <div class="flex flex-col items-center gap-32">
+            <!-- TODO: For all: proper titles and descriptions -->
+
             <AppSectionProjectsProject
                 title="File Explorer Plugin for Elgato Streamdeck"
                 description="Explore your files and folders without ever leaving your Stream Deck. The File Explorer Plugin lets you browse directories, preview images, open folders, and even run custom commands. All directly from your Stream Deck keys."
@@ -61,6 +63,21 @@ onMounted(() => {
                     { name: 'Nuxt.js', icon: 'logos:nuxt-icon' },
                     { name: 'TypeScript', icon: 'logos:typescript-icon' },
                     { name: 'Leaflet.js', icon: 'simple-icons:leaflet' },
+                ]"
+                github-url="https://github.com/ArtusLama/WachbereicheMap"
+                project-url="https://artuslama.github.io/WachbereicheMap"
+            />
+
+            <!-- TODO: Add preview video / image gallery -->
+            <AppSectionProjectsProject
+                title="Studiolution - Inactive Clients Management Tool"
+                description="A browser extension with backend in python that detects inactive clients in Studiolution, a hair salon management software. It highlights clients who haven't booked an appointment in their usual "
+                image-path="https://github.com/ArtusLama/streamdeck-fileexplorer/raw/main/de.artus.fileexplorer.sdPlugin/imgs/other/Thumbnail.png"
+                :tags="[
+                    { name: 'Python', icon: 'logos:python' },
+                    { name: 'SQLite', icon: 'lucide:database' },
+                    { name: 'WXT', icon: 'lucide:blocks' },
+                    { name: 'Vue.js', icon: 'logos:vue' },
                 ]"
                 github-url="https://github.com/ArtusLama/WachbereicheMap"
                 project-url="https://artuslama.github.io/WachbereicheMap"
