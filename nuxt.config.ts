@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         "vue-sonner/nuxt",
         "@nuxtjs/stylelint-module",
         "v-gsap-nuxt",
+        "vue3-carousel-nuxt",
     ],
 
     eslint: {
@@ -56,6 +57,10 @@ export default defineNuxtConfig({
             // Can be overridden in environment variables using NUXT_PUBLIC_BUILD_DATE
             buildDate: new Date().toISOString(),
         },
+    },
+
+    carousel: {
+        prefix: "Carousel",
     },
 
 })

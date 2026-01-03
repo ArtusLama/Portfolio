@@ -10,5 +10,6 @@ export default {
         "@stylistic/indentation": 4,
         "hue-degree-notation": null,
         "lightness-notation": null,
+        "selector-class-pattern": null,
     },
 }

@@ -2,7 +2,8 @@
 defineProps<{
     title: string
     description: string
-    imagePath: string
+    imageDirPath: string
+    imagesCount: number
     projectUrl?: string
     githubUrl?: string
     otherLink?: { label: string, url: string, external?: boolean }
@@ -16,13 +17,10 @@ defineProps<{
                 lg:flex-row
                 flex-col"
     >
-        <div class="bg-accent border rounded-3xl p-2 h-fit w-fit shrink-0">
-            <NuxtImg
-                :src="imagePath"
-                alt="Project Image"
-                class="rounded-xl xl:max-w-lg lg:max-w-sm sm:max-w-lg max-w-full"
-            />
-        </div>
+        <AppSectionProjectsProjectImageGallery
+            :image-dir-path="imageDirPath"
+            :images-count="imagesCount"
+        />
 
         <div>
             <h3 class="text-2xl font-semibold">
