@@ -16,13 +16,14 @@ const imagePaths = computed(() => {
 
 <template>
     <div class="bg-accent rounded-3xl border p-2 shrink-0 h-fit w-120">
-        <NuxtImg
-            v-if="imagePaths.length == 1"
-            class="carousel__item w-full rounded-xl aspect-video select-none"
-            :draggable="false"
-            :src="imagePaths[0]"
-            :alt="`Project image 1`"
-        />
+        <AppSectionProjectsProjectMagnifyImage v-if="imagePaths.length == 1">
+            <NuxtImg
+                class="carousel__item w-full rounded-xl aspect-video select-none"
+                :draggable="false"
+                :src="imagePaths[0]"
+                :alt="`Project image 1`"
+            />
+        </AppSectionProjectsProjectMagnifyImage>
 
         <CarouselCarousel
             v-else
@@ -34,12 +35,14 @@ const imagePaths = computed(() => {
                 v-for="(imagePath, index) in imagePaths"
                 :key="index"
             >
-                <NuxtImg
-                    class="carousel__item w-full rounded-xl aspect-video select-none"
-                    :draggable="false"
-                    :src="imagePath"
-                    :alt="`Project image ${index + 1}`"
-                />
+                <AppSectionProjectsProjectMagnifyImage>
+                    <NuxtImg
+                        class="carousel__item w-full rounded-xl aspect-video select-none"
+                        :draggable="false"
+                        :src="imagePath"
+                        :alt="`Project image ${index + 1}`"
+                    />
+                </AppSectionProjectsProjectMagnifyImage>
             </CarouselSlide>
 
             <template #addons>
