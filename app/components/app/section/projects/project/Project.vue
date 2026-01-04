@@ -20,6 +20,7 @@ defineProps<{
         <AppSectionProjectsProjectImageGallery
             :image-dir-path="imageDirPath"
             :images-count="imagesCount"
+            class="xl:w-150 lg:w-100 md:w-150 w-full shrink-0"
         />
 
         <div>

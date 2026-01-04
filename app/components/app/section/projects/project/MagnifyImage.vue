@@ -17,19 +17,9 @@ const open = ref(false)
                     :size="20"
                 />
             </DialogTrigger>
-            <DialogContent class="bg-transparent p-0 border-0 flex min-w-fit ">
+            <DialogContent class="bg-transparent p-0 border-0 flex min-w-fit max-w-300!">
                 <slot />
             </DialogContent>
         </Dialog>
     </div>
 </template>
-
-<style scoped>
-.dialog-img {
-    max-width: 90vw;
-    max-height: 90vh;
-    object-fit: contain;
-    display: block;
-    margin: auto;
-}
-</style>
