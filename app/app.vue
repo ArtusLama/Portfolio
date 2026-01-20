@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Analytics } from "@vercel/analytics/nuxt"
 import ScrollTrigger from "gsap/ScrollTrigger"
 
 useSeoMeta({
@@ -42,6 +43,7 @@ watchEffect((onInvalidate) => {
 
 <template>
     <div>
+        <Analytics />
         <VueLenis
             ref="lenis"
             root
