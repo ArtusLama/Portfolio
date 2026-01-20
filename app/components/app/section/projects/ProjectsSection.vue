@@ -30,7 +30,7 @@ onMounted(() => {
                 image-dir-path="/imgs/projects/streamdeck-fileexplorer"
                 :images-count="5"
                 :tags="[
-                    { name: `${fileexplorerPluginDownloads || '> 8000'} Downloads`, icon: 'lucide:download' },
+                    { name: `${fileexplorerPluginDownloads || '> 10000'} Downloads`, icon: 'lucide:download' },
                     { name: 'TypeScript', icon: 'logos:typescript-icon' },
                     { name: 'StreamDeck SDK', icon: 'simple-icons:elgato' },
                 ]"

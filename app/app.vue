@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Analytics } from "@vercel/analytics/nuxt"
+import { SpeedInsights } from "@vercel/speed-insights/nuxt"
 import ScrollTrigger from "gsap/ScrollTrigger"
 
 useSeoMeta({
@@ -44,6 +45,8 @@ watchEffect((onInvalidate) => {
 <template>
     <div>
         <Analytics />
+        <SpeedInsights />
+
         <VueLenis
             ref="lenis"
             root
