@@ -8,6 +8,7 @@ function goToTop() {
 
 <template>
     <footer
+        aria-label="Footer"
         class="px-16 py-10 bg-footer flex flex-col
                 gap-16
                 lg:gap-12"

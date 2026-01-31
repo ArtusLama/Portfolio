@@ -14,7 +14,10 @@ function closeMenu() {
 </script>
 
 <template>
-    <nav class="flex flex-col gap-y-4 items-start mt-8 *:w-full">
+    <nav
+        class="flex flex-col gap-y-4 items-start mt-8 *:w-full"
+        aria-label="Mobile Navigation"
+    >
         <NavigationMobileLink
             to="/"
             icon="lucide:house"

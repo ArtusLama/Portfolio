@@ -7,7 +7,10 @@ function goToTop() {
 </script>
 
 <template>
-    <nav class="flex items-center justify-evenly origin-center w-full">
+    <nav
+        class="flex items-center justify-evenly origin-center w-full"
+        aria-label="Desktop Navigation"
+    >
         <NavigationDesktopLink
             to="/"
             icon="lucide:house"

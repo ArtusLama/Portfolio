@@ -5,7 +5,10 @@ const connected = computed(() => y.value < 100)
 </script>
 
 <template>
-    <header class="nav-wrapper fixed top-0 left-1/2 -translate-x-1/2 z-50 flex justify-center">
+    <header
+        class="nav-wrapper fixed top-0 left-1/2 -translate-x-1/2 z-50 flex justify-center"
+        aria-label="Desktop Header"
+    >
         <div
             class="navbar"
             :class="connected ? 'connected' : 'detached'"
