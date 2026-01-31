@@ -44,8 +44,14 @@ watchEffect((onInvalidate) => {
 
 <template>
     <div>
-        <Analytics />
-        <SpeedInsights />
+        <Analytics
+            script-src="/ver_ana/insights/script.js"
+            endpoint="/ver_ana/insights"
+        />
+        <SpeedInsights
+            script-src="/ver_ana/speed-insights/script.js"
+            endpoint="/ver_ana/speed-insights"
+        />
 
         <VueLenis
             ref="lenis"
