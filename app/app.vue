@@ -50,7 +50,7 @@ watchEffect((onInvalidate) => {
         />
         <SpeedInsights
             script-src="/ver_ana/speed-insights/script.js"
-            endpoint="/ver_ana/speed-insights"
+            endpoint="/ver_ana/speed-insights/vitals"
         />
 
         <VueLenis
