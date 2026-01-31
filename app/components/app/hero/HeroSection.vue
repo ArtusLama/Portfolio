@@ -10,17 +10,10 @@ const locationIconId = "hero-location-icon"
 onMounted(() => {
     const gsap = useGSAP()
 
-    const splitTopText = SplitText.create(`#${topTextId}`, {
-        type: "words,chars",
-    })
-
-    const splitNameText = SplitText.create(`#${nameTextId}`, {
-        type: "chars,words",
-    })
-
-    const splitLocationText = SplitText.create(`#${locationTextId}`, {
-        type: "words,chars",
-    })
+    const splitTopText = SplitText.create(`#${topTextId}`, { type: "chars, words" })
+    const splitNameText = SplitText.create(`#${nameTextId}`, { type: "chars, words" })
+    const splitRoleText = SplitText.create(`#${roleTextId}`, { type: "words" })
+    const splitLocationText = SplitText.create(`#${locationTextId}`, { type: "chars, words" })
 
     const timeline = gsap.timeline({
         scrollTrigger: {
@@ -37,6 +30,9 @@ onMounted(() => {
             y: 20,
             stagger: 0.03,
             ease: "power2.out",
+            onComplete: () => {
+                splitTopText.revert()
+            },
         })
         .from(splitNameText.chars, {
             opacity: 0,
@@ -46,20 +42,29 @@ onMounted(() => {
             filter: "blur(4px)",
             stagger: 0.1,
             ease: "power2.out",
+            onComplete: () => {
+                splitNameText.revert()
+            },
         }, "-=0.3")
-        .from(`#${roleTextId} > span`, {
+        .from(splitRoleText.words, {
             opacity: 0,
             y: -20,
             scale: 1.4,
             stagger: 0.1,
             duration: 1,
             ease: "power2.out",
+            onComplete: () => {
+                splitRoleText.revert()
+            },
         }, "-=0.5")
         .from(splitLocationText.chars, {
             opacity: 0,
             y: 20,
             stagger: 0.03,
             ease: "power2.out",
+            onComplete: () => {
+                splitLocationText.revert()
+            },
         }, "-=0.5")
         .from(`#${locationIconId}`, {
             opacity: 0,
@@ -87,7 +92,7 @@ onMounted(() => {
             </h1>
             <h2
                 :id="roleTextId"
-                class="font-bold text-5xl text-center *:inline-block space-x-2 leading-14"
+                class="font-bold text-5xl text-center leading-14"
             >
                 <span
                     class="bg-linear-to-b from-fuchsia-300 to-fuchsia-700 bg-clip-text text-transparent"
@@ -95,7 +100,7 @@ onMounted(() => {
                 >
                     Designer
                 </span>
-                <span>&</span>
+                &
                 <span
                     class="bg-linear-to-b from-sky-300 to-blue-700 bg-clip-text text-transparent"
                     :style="{ WebkitTextFillColor: 'transparent' }"

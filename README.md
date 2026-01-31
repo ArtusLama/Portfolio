@@ -7,6 +7,7 @@
 - [ ] Real content for the footer
 - [ ] Fix white mode / add support for it
 - [ ] Add more sections? (Testimonials, etc.)
+- [ ] Use custom gsap plugin instead of module
 
 underlines on chromium browsers
 accessibility

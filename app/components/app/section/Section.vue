@@ -29,7 +29,7 @@ onMounted(() => {
     })
 
     const splitSubtitle = SplitText.create(`#${subtitleId.value}`, {
-        type: "chars,words",
+        type: "chars, words",
     })
 
     gsap.from(splitSubtitle.chars, {
@@ -41,6 +41,9 @@ onMounted(() => {
             trigger: `#${subtitleId.value}`,
             start: "top 90%",
             toggleActions: "play none none reverse",
+        },
+        onComplete: () => {
+            splitSubtitle.revert()
         },
     })
 
@@ -58,6 +61,9 @@ onMounted(() => {
             trigger: `#${titleId.value}`,
             start: "top 90%",
             toggleActions: "play none none reverse",
+        },
+        onComplete: () => {
+            splitTitle.revert()
         },
     })
 })
